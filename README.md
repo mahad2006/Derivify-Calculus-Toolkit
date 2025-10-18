@@ -34,11 +34,9 @@ It features four difficulty levels:
 
 ## Application Screenshots
 
-*(To add your screenshots, create a folder named `screenshots` in this repository, upload your images there, and replace the filenames below. For example: `screenshots/calculator.png`)*
-
-| Calculator | Navigation Menu | Quiz Difficulty | Quiz in Progress |
+| Calculator | Navigation Menu | Quiz Selection | Quiz in Progress |
 | :---: | :---: | :---: | :---: |
-| <img src="URL_TO_YOUR_SCREENSHOT_1.png" alt="Calculator Screen" width="200"/> | <img src="URL_TO_YOUR_SCREENSHOT_2.png" alt="Navigation Drawer" width="200"/> | <img src="URL_TO_YOUR_QUIZ_SCREENSHOT_1.png" alt="Quiz Difficulty Screen" width="200"/> | <img src="URL_TO_YOUR_QUIZ_SCREENSHOT_2.png" alt="Quiz Question Screen" width="200"/> |
+| <img src="screenshots/calculator.png" alt="Calculator Screen" width="200"/> | <img src="screenshots/navigation.png" alt="Navigation Drawer" width="200"/> | <img src="screenshots/quiz_difficulty.png" alt="Quiz Difficulty Screen" width="200"/> | <img src="screenshots/quiz_question.png" alt="Quiz Question Screen" width="200"/> |
 
 <br>
 
@@ -50,7 +48,7 @@ This project was an exercise in building a modern, robust Android application fr
 * **User Interface:** **Jetpack Compose** with **Material 3** for a fully declarative, modern UI.
 * **Architecture:** Follows the **MVVM (Model-View-ViewModel)** pattern to ensure a clean separation of concerns between the UI and the business logic.
 * **State Management:** State is managed using `ViewModels` and `MutableState`, allowing the UI to react efficiently to data changes.
-* **Math Engine:** [**IMPORTANT: Describe your math engine here.** e.g., "The app uses a custom-built symbolic differentiation engine to parse and solve expressions."]
+* **Math Engine:** Features a **custom-built symbolic differentiation engine**. It parses the user's function into an expression tree and recursively applies calculus rules (like the Power Rule, Product Rule, and Chain Rule) to find the exact analytical derivative.
 
 <br>
 
