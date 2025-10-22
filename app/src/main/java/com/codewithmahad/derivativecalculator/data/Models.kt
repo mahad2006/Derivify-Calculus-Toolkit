@@ -4,7 +4,6 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 import kotlinx.serialization.Serializable
 
-// The HistoryItem is now consolidated here, with the timestamp needed for persistence.
 @Serializable
 data class HistoryItem(
     val function: String,
@@ -34,7 +33,7 @@ enum class MathPanelTab(val title: String) {
     SYMBOLS("Syms")    // "Syms" for Symbols
 }
 
-// Keeping these for now, but will likely be replaced by the new Formula class
+
 data class FormulaItem(val latex: String, val description: String)
 
 data class FormulaCategory(val title: String, val formulas: List<FormulaItem>)

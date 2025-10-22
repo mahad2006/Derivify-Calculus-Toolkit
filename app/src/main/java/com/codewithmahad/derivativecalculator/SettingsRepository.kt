@@ -14,10 +14,8 @@ import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-// Define the DataStore instance
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
-// Enum for our theme options
 enum class ThemeOption {
     LIGHT, DARK, SYSTEM
 }

@@ -1,5 +1,3 @@
-// In file: ui/screens/AboutScreen.kt
-
 package com.codewithmahad.derivativecalculator.ui.screens
 
 import android.content.Intent

@@ -26,7 +26,6 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun CalculatorScreenLayout(
-    // --- Inputs for the layout ---
     pageTitle: String,
     formulaLatex: String,
     contentPadding: PaddingValues,
@@ -34,7 +33,6 @@ fun CalculatorScreenLayout(
     rawLatexToCopy: String,
     snackbarHostState: SnackbarHostState,
     scope: CoroutineScope,
-    // --- This is the "slot" for your TextFields and Buttons ---
     inputContent: @Composable () -> Unit,
     additionalContent: @Composable () -> Unit = {}
 ) {

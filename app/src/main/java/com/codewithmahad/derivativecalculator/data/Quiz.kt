@@ -16,7 +16,7 @@ data class QuizQuestion(
     val options: List<String>,
     val correctAnswer: String,
     val rule: String,
-    val difficulty: Difficulty // NEW: Property to hold the difficulty
+    val difficulty: Difficulty
 ) {
     // Shuffling is now done in the ViewModel to ensure it's different
     // every time, not just once when the app starts.

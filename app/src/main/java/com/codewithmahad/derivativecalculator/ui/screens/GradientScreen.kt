@@ -31,7 +31,7 @@ import kotlinx.coroutines.CoroutineScope
 @Composable
 fun GradientScreen(
     viewModel: GradientViewModel,
-    onMathInputFocused: (Boolean) -> Unit, // This parameter is now used
+    onMathInputFocused: (Boolean) -> Unit,
     contentPadding: PaddingValues,
     snackbarHostState: SnackbarHostState,
     scope: CoroutineScope
@@ -52,7 +52,6 @@ fun GradientScreen(
                 modifier = Modifier.padding(20.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                // --- FUNCTION TEXT FIELD (FIXED) ---
                 OutlinedTextField(
                     value = viewModel.functionInput,
                     onValueChange = { viewModel.onGradientFunctionChange(it) },
@@ -60,7 +59,7 @@ fun GradientScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .onFocusChanged { focusState ->
-                            // This line tells the main app to show the Math Panel
+
                             onMathInputFocused(focusState.isFocused)
                         },
                     shape = RoundedCornerShape(12.dp),
@@ -71,7 +70,6 @@ fun GradientScreen(
                     keyboardActions = KeyboardActions(onNext = { variablesFocusRequester.requestFocus() })
                 )
 
-                // --- VARIABLES TEXT FIELD (FIXED) ---
                 OutlinedTextField(
                     value = viewModel.gradientVariablesInput,
                     onValueChange = { viewModel.onGradientVariablesChange(it) },
@@ -80,7 +78,6 @@ fun GradientScreen(
                         .fillMaxWidth()
                         .focusRequester(variablesFocusRequester)
                         .onFocusChanged { focusState ->
-                            // This line tells the main app to HIDE the Math Panel
                             if (focusState.isFocused) {
                                 onMathInputFocused(false)
                             }

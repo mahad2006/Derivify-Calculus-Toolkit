@@ -223,7 +223,7 @@ fun DerivifyApp(
                         Icon(
                             Icons.Default.Landscape, contentDescription = "Maxima & Minima"
                         )
-                    }, // Icon for hills/valleys
+                    },
                     label = { Text("Maxima & Minima Test") },
                     selected = currentRoute == "maxima_minima",
                     onClick = {
@@ -273,11 +273,9 @@ fun DerivifyApp(
                     })
             }
         }) {
-        // --- THIS IS THE CORRECTED LAYOUT STRUCTURE ---
-        // A parent Column handles the keyboard padding for the entire app.
         Column(modifier = Modifier.fillMaxSize().imePadding()) {
             Scaffold(
-                modifier = Modifier.weight(1f), // The Scaffold takes up all available space
+                modifier = Modifier.weight(1f),
                 snackbarHost = { SnackbarHost(snackbarHostState) },
                 topBar = {
                     val title = when (currentRoute) {
@@ -375,8 +373,6 @@ fun DerivifyApp(
                     scope = scope
                 )
             }
-
-            // The MathPanel now lives OUTSIDE the Scaffold, at the bottom of the screen.
             AnimatedVisibility(visible = showMathPanel) {
                 MathPanel(calculatorViewModel = activeViewModel)
             }

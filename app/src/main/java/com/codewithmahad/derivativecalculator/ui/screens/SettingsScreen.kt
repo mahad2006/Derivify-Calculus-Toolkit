@@ -51,7 +51,7 @@ import com.codewithmahad.derivativecalculator.viewmodels.SettingsViewModel
 @Composable
 fun SettingsScreen(
     settingsViewModel: SettingsViewModel = viewModel(),
-    contentPadding: PaddingValues // <-- Accept the padding here
+    contentPadding: PaddingValues
 ) {
     val currentTheme by settingsViewModel.themeOption.collectAsState()
     val context = LocalContext.current
@@ -100,7 +100,7 @@ fun SettingsScreen(
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 Text("General", style = MaterialTheme.typography.titleLarge)
                 Card {
-                    // Keep Screen On
+
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()

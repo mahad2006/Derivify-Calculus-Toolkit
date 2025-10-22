@@ -20,20 +20,13 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Construction
 import androidx.compose.material.icons.filled.Remove
-import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedIconButton
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.PlainTooltip
 import androidx.compose.material3.Text
-import androidx.compose.material3.TooltipBox
-import androidx.compose.material3.TooltipDefaults
-import androidx.compose.material3.rememberTooltipState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -45,7 +38,6 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
-import com.codewithmahad.derivativecalculator.data.FormulaItem
 
 @Composable
 fun LatexView(latex: String, fontSize: TextUnit = 18.sp) {
@@ -177,43 +169,6 @@ fun EvaluationCard(
         }
     }
 }
-// You can keep SolutionStepsCard and LatexStepView if you plan to re-add them later.
-
-@Composable
-fun SolutionStepsCard(steps: List<String>) {
-    Card(
-        modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
-    ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Text(
-                text = "Solution Steps",
-                style = MaterialTheme.typography.titleMedium,
-                color = MaterialTheme.colorScheme.onSurface
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-
-            // Display each step using a row with a number and the LatexStepView
-            steps.forEachIndexed { index, step ->
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(
-                        text = "${index + 1}.",
-                        modifier = Modifier.padding(end = 8.dp),
-                        style = MaterialTheme.typography.bodyMedium
-                    )
-                    LatexStepView(latex = step)
-                }
-                if (index < steps.lastIndex) {
-                    Spacer(modifier = Modifier.height(4.dp))
-                }
-            }
-        }
-    }
-}
 
 @Composable
 fun LatexStepView(latex: String) {
@@ -270,20 +225,6 @@ fun LatexStepView(latex: String) {
     )
 }
 @Composable
-fun FormulaCard(item: FormulaItem) {
-    Card(
-        modifier = Modifier.fillMaxWidth(),
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
-    ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            LatexView(latex = item.latex)
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(text = item.description, style = MaterialTheme.typography.bodyMedium)
-        }
-    }
-}
-
-@Composable
 fun InProgressScreen(featureName: String, contentPadding: PaddingValues) { // <-- ADD THE PARAMETER
     Column(
         modifier = Modifier
@@ -312,27 +253,6 @@ fun InProgressScreen(featureName: String, contentPadding: PaddingValues) { // <-
             style = MaterialTheme.typography.bodyLarge,
             textAlign = TextAlign.Center,
             color = MaterialTheme.colorScheme.onSurfaceVariant
-        )
-    }
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun InfoTooltip(tooltipText: String) {
-    TooltipBox(
-        positionProvider = TooltipDefaults.rememberPlainTooltipPositionProvider(),
-        tooltip = {
-            PlainTooltip {
-                Text(tooltipText)
-            }
-        },
-        state = rememberTooltipState()
-    ) {
-        Icon(
-            imageVector = Icons.Outlined.Info,
-            contentDescription = "Info",
-            modifier = Modifier.size(16.dp),
-            tint = MaterialTheme.colorScheme.onSurfaceVariant
         )
     }
 }

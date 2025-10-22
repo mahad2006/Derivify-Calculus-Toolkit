@@ -217,7 +217,6 @@ private fun QuizOptionCard(
     isAnswered: Boolean,
     onClick: () -> Unit
 ) {
-    // (This Composable is unchanged from our last version)
     val borderColor: Color
     val backgroundColor: Color
 
@@ -300,7 +299,6 @@ private fun QuizOptionCard(
 
 @Composable
 fun QuizFinishedScreen(score: Int, totalQuestions: Int, onPlayAgain: () -> Unit) {
-    // (This Composable is unchanged)
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
