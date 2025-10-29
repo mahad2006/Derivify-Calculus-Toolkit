@@ -1,6 +1,6 @@
 # Derivify: The Calculus Toolkit
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/YOUR_USERNAME/YOUR_REPO?style=for-the-badge&label=Latest%20Release)](https://github.com/YOUR_USERNAME/YOUR_REPO/releases/latest)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/mahad2006/Derivify-Calculus-Toolkit?style=for-the-badge&label=Latest%20Release)](https://github.com/mahad2006/Derivify-Calculus-Toolkit/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 This project began as a final assignment for my second-semester Multi-Variable Calculus course. The requirement was to build something related to our curriculum, but I saw it as an opportunity to build a truly useful, high-quality tool for other students.
